@@ -1,32 +1,72 @@
 # Java 源文件清单
 
-> 每个 Task 对应一个独立的 Java 源文件。无额外依赖，每个 Task 可以单独编译运行。
+本项目按业务领域划分为三个独立子系统，每个子系统下按职责拆分为多个 Java 类。
 
 ---
 
-## Part 1：图书借阅管理系统
+## Project 1：library-management
 
-| 编号 | 文件名 | 难度 |
-|------|--------|------|
-| Task01 | Task01_OverdueFineCalculator.java | 🟢 |
-| Task02 | Task02_BookCategoryCounter.java | 🟢 |
-| Task03 | Task03_BookStringValidator.java | 🟢 |
-| Task04 | Task04_BookClassDesign.java | 🟡 |
-| Task05 | Task05_BookListManager.java | 🟡 |
-| Task06 | Task06_LibraryBorrowingSystem.java | 🔴 |
-| Task07 | Task07_EmployeeSalaryStats.java | 🟢 |
-| Task08 | Task08_EmployeeInheritance.java | 🟡 |
-| Task09 | Task09_PayableInterface.java | 🟡 |
-| Task10 | Task10_SalaryMapManager.java | 🟡 |
-| Task11 | Task11_PayrollSystem.java | 🔴 |
-| Task12 | Task12_CampusCardUtils.java | 🟢 |
-| Task13 | Task13_CampusCardAbstract.java | 🟡 |
-| Task14 | Task14_CardExceptionDemo.java | 🔴 |
-| Task15 | Task15_CampusCardSystem.java | 🔴 |
+```
+library-management/
+└── src/
+    ├── Book.java                     // 图书实体类（封装）
+    ├── BookValidator.java            // ISBN/书名格式校验
+    ├── BookCategoryCounter.java      // 图书分类统计工具
+    ├── OverdueFineCalculator.java    // 逾期罚款计算器
+    ├── BookService.java              // 图书清单管理服务
+    ├── BookNotFoundException.java    // 自定义异常
+    ├── BookNotAvailableException.java// 自定义异常
+    └── BorrowingService.java         // 借阅流程服务
+```
 
 ---
 
-## 项目结构
+## Project 2：payroll-system
+
+```
+payroll-system/
+└── src/
+    ├── Payable.java                  // 薪资计算接口
+    ├── Employee.java                 // 员工基类
+    ├── Manager.java                  // 经理子类
+    ├── Developer.java                // 开发人员子类
+    ├── Intern.java                   // 实习生子类
+    ├── SalaryStatistics.java         // 薪资统计工具
+    ├── SalaryReport.java             // 统计结果封装
+    ├── PayrollDataManager.java       // 员工数据管理（HashMap）
+    ├── PayrollSystem.java            // 薪资核算主流程
+    ├── EmployeeNotFoundException.java// 自定义异常
+    └── DuplicatePayrollException.java// 自定义异常
+```
+
+---
+
+## Project 3：campus-card-system
+
+```
+campus-card-system/
+└── src/
+    ├── com/campuscard/
+    │   ├── util/
+    │   │   ├── CampusCardConstants.java
+    │   │   └── IdGenerator.java
+    │   ├── domain/
+    │   │   ├── CampusCard.java        // 抽象类
+    │   │   ├── StudentCard.java
+    │   │   └── TeacherCard.java
+    │   ├── exception/
+    │   │   ├── InsufficientBalanceException.java
+    │   │   ├── InvalidCardException.java
+    │   │   └── CardExpiredException.java
+    │   └── system/
+    │       └── CampusCardSystem.java  // 综合主流程
+    └── com/campuscard/test/
+        └── UtilDemoTest.java          // 工具类演示测试
+```
+
+---
+
+## 总项目结构
 
 ```
 java-basics-practice/
@@ -34,24 +74,10 @@ java-basics-practice/
 ├── requirements/
 │   ├── tasks.md
 │   └── source_files_list.md
-└── src/
-    ├── Task01_OverdueFineCalculator.java
-    ├── Task02_BookCategoryCounter.java
-    ├── Task03_BookStringValidator.java
-    ├── Task04_BookClassDesign.java
-    ├── Task05_BookListManager.java
-    ├── Task06_LibraryBorrowingSystem.java
-    ├── Task07_EmployeeSalaryStats.java
-    ├── Task08_EmployeeInheritance.java
-    ├── Task09_PayableInterface.java
-    ├── Task10_SalaryMapManager.java
-    ├── Task11_PayrollSystem.java
-    ├── Task12_CampusCardUtils.java
-    ├── Task13_CampusCardAbstract.java
-    ├── Task14_CardExceptionDemo.java
-    └── Task15_CampusCardSystem.java
+├── library-management/
+│   └── src/ ...
+├── payroll-system/
+│   └── src/ ...
+└── campus-card-system/
+    └── src/ ...
 ```
-
----
-
-> 复制文件名时注意保留 `Task` 前缀和序号，保持命名一致。
