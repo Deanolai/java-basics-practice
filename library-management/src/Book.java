@@ -4,7 +4,7 @@ public class Book {
     private String author;
     private String category;
     private boolean isBorrowed = false;
-    
+
     public Book(String isbn, String title, String author, String category) {
         this.isbn = isbn;
         this.title = title;
