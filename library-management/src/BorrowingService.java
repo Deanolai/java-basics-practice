@@ -35,7 +35,7 @@ public class BorrowingService {
         }
 
         book.borrow();
-        System.out.println("借书成功" + book.getTitle());
+        System.out.println("借书成功  " + book.getTitle());
     }
 
     public void returnBook(String isbn, int overdueDays) throws BookNotFoundException{
