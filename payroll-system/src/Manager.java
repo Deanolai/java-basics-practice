@@ -1,4 +1,4 @@
-public class Manager extends Employee{
+public class Manager extends Employee implements Payable{
     private double positionAllowance;
 
     public Manager(int employeeId, String name, double baseSalary, double positionAllowance) {
@@ -13,5 +13,10 @@ public class Manager extends Employee{
 
     public double getPositionAllowance() {
         return positionAllowance;
+    }
+
+    @Override
+    public double calculateSalary(){
+        return positionAllowance + baseSalary;
     }
 }
