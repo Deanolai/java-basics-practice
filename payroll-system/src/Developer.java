@@ -6,10 +6,6 @@ public class Developer extends Employee implements Payable {
         this.projectBonus = projectBonus;
     }
 
-    public double getProjectBonus() {
-        return projectBonus;
-    }
-
     @Override
     public String getRole() {
         return "Developer";

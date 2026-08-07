@@ -11,10 +11,6 @@ public class Manager extends Employee implements Payable{
         return "Manager";
     }
 
-    public double getPositionAllowance() {
-        return positionAllowance;
-    }
-
     @Override
     public double calculateSalary(){
         return positionAllowance + baseSalary;
